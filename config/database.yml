@@ -1,0 +1,24 @@
+setup: &setup
+  adapter: mysql2
+  encoding: utf8
+  host: localhost
+  pool: 5
+
+development:
+  <<: *setup
+  database: treasury_development
+
+test:
+  <<: *setup
+  database: treasury_test
+
+staging:
+  <<: *setup
+  database: treasury_staging
+
+production:
+  <<: *setup
+  database: treasury_production
+
+cucumber:
+  <<: *test
