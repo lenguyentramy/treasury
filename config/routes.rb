@@ -1,4 +1,14 @@
 Treasury::Application.routes.draw do
+
+  get "manage/users"
+
+  get "manager/users"
+  devise_for :users
+
+  root :to=> "pages#home"
+  match '/users/:id', :to => 'users#show', :as => :user, :via => :get
+  get "pages/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

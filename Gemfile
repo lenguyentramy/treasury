@@ -5,7 +5,6 @@ gem 'mysql2', '0.2.6'
 gem "rails3-generators"
 gem "haml", '>= 3.1.alpha.214'
 gem "haml-rails"
-gem "jammit"
 gem "devise"
 gem "hpricot"
 gem "jquery-rails"
