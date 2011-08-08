@@ -3,7 +3,7 @@
 
 	-if user_signed_in?
 		Signed in as
-		= link_to current_user.email, current_user
+		=current_user.email
 		Not you?
 		= link_to "Sign out", destroy_user_session_path, :method => :delete
 	-else
@@ -17,5 +17,5 @@
 %ul
 	%li= link_to "Home", root_path
 	%li= link_to "Contact", pages_contact_path
-	-if current_user.admin?
+	-if user_signed_in? && current_user.admin?
 		%li= link_to "Manage User", manage_users_path

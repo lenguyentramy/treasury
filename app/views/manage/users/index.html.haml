@@ -1,0 +1,9 @@
+%h1 Users index
+=table_for(@users) do |t|
+	-t.data do
+		-t.cell :username
+		-t.cell :email
+		-t.cell('Edit') do |u|
+			-link_to "Edit", edit_manage_user_path(u)
+		-t.cell("Block") do |u|
+			-link_to "Block", manage_user_blocked_path(u)

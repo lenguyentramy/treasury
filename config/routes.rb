@@ -1,10 +1,12 @@
 Treasury::Application.routes.draw do
-
-  get "manage/users"
-
-  get "manager/users"
   devise_for :users
-
+  
+  namespace :manage do
+    resources :users do
+      get :blocked
+    end
+  end
+  
   root :to=> "pages#home"
   match '/users/:id', :to => 'users#show', :as => :user, :via => :get
   get "pages/contact"
