@@ -1,10 +1,12 @@
 Treasury::Application.routes.draw do
+
   devise_for :users
   
   namespace :manage do
     resources :users do
       get :blocked
     end
+    resources :pois
   end
   
   root :to=> "pages#home"

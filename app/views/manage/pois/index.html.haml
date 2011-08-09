@@ -1,0 +1,3 @@
+%h1 Poi index
+=table_for(@pois) do |t|
+	-t.data :lat, :lng, :points, :actions => [:edit, :destroy], :action_prefix=>"manage"
