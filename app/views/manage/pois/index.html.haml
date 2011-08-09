@@ -1,3 +1,5 @@
 %h1 Poi index
+= will_paginate
+
 =table_for(@pois) do |t|
 	-t.data :lat, :lng, :points, :actions => [:edit, :destroy], :action_prefix=>"manage"
