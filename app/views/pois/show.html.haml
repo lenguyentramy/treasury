@@ -1,0 +1,9 @@
+%h1
+	= "Poi " + "#{@poi.id}"
+lat:
+= @poi.lat
+%br
+lng:
+= @poi.lng
+%br
+= image_tag "http://maps.google.com/maps/api/staticmap?zoom=14&size=476x476&maptype=streetmap&markers=color:red|#{@poi.lat},#{@poi.lng}&sensor=false"

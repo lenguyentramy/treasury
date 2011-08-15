@@ -1,0 +1,5 @@
+#h1 Poi Index
+
+- form_tag pois_path, :method => :get do
+	-for poi in @pois
+		%li= link_to poi.address, poi

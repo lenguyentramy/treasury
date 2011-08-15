@@ -1,1 +1,3 @@
 %h1 Home
+-if user_signed_in?
+	= gmaps4rails(@json)

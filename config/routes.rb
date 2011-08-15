@@ -1,7 +1,7 @@
 Treasury::Application.routes.draw do
 
   devise_for :users
-  
+  resources :pois, :only => [:show, :index]
   namespace :manage do
     resources :users do
       get :blocked
@@ -11,6 +11,7 @@ Treasury::Application.routes.draw do
   
   root :to=> "pages#home"
   match '/users/:id', :to => 'users#show', :as => :user, :via => :get
+  
   get "pages/contact"
 
   # The priority is based upon order of creation:

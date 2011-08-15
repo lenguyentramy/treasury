@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 gem 'rails', '3.0.9'
 gem 'mysql2', '0.2.6'
+gem 'nifty-generators'
 
 gem "rails3-generators"
 gem "haml", '>= 3.1.alpha.214'
@@ -22,19 +23,16 @@ gem "tabletastic"
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.3'
 gem 'will_paginate', '~>3.0.pre2'
-gem 'geocoder'
 gem 'gmaps4rails', '~>0.8.8'
+gem "geocoder"
 gem 'acts-as-taggable-on'
 gem "compass", ">= 0.11.1"
 gem 'acts_as_list', :git => 'git://github.com/haihappen/acts_as_list.git'
-gem 'youtube_it'
 gem 'nokogiri'
 gem 'acts_as_indexed'
 gem 'RedCloth'
 gem 'mobile-fu'
-gem 'paper_trail', '~> 2'
 gem 'has_scope'
-
 group :development do
   gem "ruby-debug19"
   gem 'rails-footnotes', '>= 3.7'
