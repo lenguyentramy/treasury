@@ -6,7 +6,10 @@
 		-t.cell('Edit') do |u|
 			-link_to "Edit", edit_manage_user_path(u)
 		-t.cell("Block") do |u|
-			-link_to "Block", manage_user_blocked_path(u)
+			-if u.blocked
+				-link_to "Blocked", manage_user_banned_path(u)
+			-else
+				-link_to "Block", manage_user_banned_path(u)
 			
 =will_paginate
 			

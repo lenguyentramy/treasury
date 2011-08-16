@@ -4,7 +4,6 @@ class CreatePois < ActiveRecord::Migration
       t.float :lat
       t.float :lng
       t.integer :points
-
       t.timestamps
     end
   end

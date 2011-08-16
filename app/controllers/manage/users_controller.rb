@@ -3,4 +3,8 @@ class Manage::UsersController < Manage::BaseController
   def index
     @users = User.paginate(:page => params[:page])
   end
+  def banned
+    redirect_to :back
+  end
 end
+

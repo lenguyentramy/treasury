@@ -1,10 +1,13 @@
 Treasury::Application.routes.draw do
 
   devise_for :users
-  resources :pois, :only => [:show, :index]
+  resources :pois, :only => [:show, :index] do
+    post 'collected'
+  end
+    
   namespace :manage do
     resources :users do
-      get :blocked
+      get :banned
     end
     resources :pois
   end

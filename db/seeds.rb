@@ -17,8 +17,11 @@ User.create!(:username =>"User#{n+1}",
   
 end
 
+CollectedPoi.create!(:user_id=>1, :poi_id=>1, :points=>10)
+
 20.times do
-  lat = rand(180)-90+0.345454645
-  lng = rand(360)-180+0.9301112
+  lat = 50 + (rand * 5)
+  lng = 10 + (rand * 5)
   Poi.create!(:lat=> lat, :lng =>lng)
 end
+

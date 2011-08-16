@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  has_many :collected_poi
+  has_many :pois, :through => :collected_poi
   
   def banned?
     blocked
