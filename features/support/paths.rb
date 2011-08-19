@@ -10,7 +10,16 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+      when /^the sign up\s?page$/
+        new_user_registration_path
+      when /^the sign in\s?page$/
+        new_user_session_path  
+      when /^"([^"]*)" profile page$/i
+        user_path(User.find_by_email($1))
+      when /^the manage users\s?page$/
+        manage_users_path
+      when /^the manage pois\s?page$/
+        manage_pois_path      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

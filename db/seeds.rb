@@ -6,15 +6,15 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-admin= User.create!(:username =>"Admin", :email => 'admin@exp.com', :password=>"123456")
+admin= User.create!(:username =>"Admin", :email => 'admin@exp.com', :password=>"123456",:blocked => false)
 admin.toggle!(:admin)
 
 99.times do |n|
 
-User.create!(:username =>"User#{n+1}",
+user= User.create!(:username =>"User#{n+1}",
             :email => "user#{n+1}@exp.com",
-            :password=>"123456")
-  
+            :password=>"123456",
+            :blocked => false)  
 end
 
 CollectedPoi.create!(:user_id=>1, :poi_id=>1, :points=>10)

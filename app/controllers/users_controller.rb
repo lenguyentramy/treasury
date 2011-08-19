@@ -1,6 +1,7 @@
-class UsersController < ApplicationController
+class UsersController < InheritedResources::Base
   def show
-    @sum = CollectedPoi.where(:user_id => current_user.id).sum(:points)
+    @user = User.find_by_id(params[:id])
+   @summe= @user.sum(current_user)
   end
 
 end

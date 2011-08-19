@@ -6,11 +6,18 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :blocked
   has_many :collected_poi
   has_many :pois, :through => :collected_poi
-  
+
   def banned?
-    blocked
+    blocked ||= false
+  end
+  def block
+    self.blocked = true unless banned?
+  end
+  
+  def sum(user)
+  CollectedPoi.where(:user_id => user.id).sum(:points)
   end
 end

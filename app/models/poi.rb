@@ -8,8 +8,11 @@ class Poi < ActiveRecord::Base
   has_many :users, :through => :collected_poi
   has_many :collected_poi   
   
-   def gmaps4rails_address
-     "#{self.street}, #{self.city}, #{self.country}" 
-   end
-   
+  def collected(poi, user)
+      CollectedPoi.create!(:poi_id=>poi.id, :user_id=>user.id, :points=> rand(10))
+  end
+  def poi_points(p_point)
+    pp= points.to_i + p_point.points
+    update_attributes!(:points =>pp)
+  end
 end

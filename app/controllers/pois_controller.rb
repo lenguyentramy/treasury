@@ -11,9 +11,8 @@ class PoisController < InheritedResources::Base
     @poi = Poi.find_by_id(params[:poi_id])
     if user_signed_in?
       unless current_user.pois.include?(@poi)
-        @collected = CollectedPoi.create!(:poi_id=>@poi.id, :user_id=>current_user.id, :points=> rand(10))
-        poi_points = @poi.points.to_i + @collected.points
-        @poi.update_attributes!(:points =>poi_points)
+       points = @poi.collected(@poi,current_user)
+       @poi.poi_points(points)
       end
       redirect_to :back
     else

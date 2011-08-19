@@ -259,7 +259,7 @@ DEPENDENCIES
   has_scope
   hpricot
   inherited_resources (~> 1.2.1)
-  jquery-rails
+  jquery-rails (>= 1.0.12)
   kaminari
   launchy
   mobile-fu

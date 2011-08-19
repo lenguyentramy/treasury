@@ -3,8 +3,15 @@ class Manage::UsersController < Manage::BaseController
   def index
     @users = User.paginate(:page => params[:page])
   end
-  def banned
+  def banned    
+    @user = User.find_by_id(params[:user_id])
+    @user.block unless @user.admin
     redirect_to :back
   end
+  def update
+    update!{ manage_users_url }
+  end
+  
+
 end
 

@@ -48,3 +48,7 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
+# Helper for finding a link to a certain target
+def link_to(target)
+  ".//a[@href = \"#{path_to("the #{target} page")}\"]"
+end

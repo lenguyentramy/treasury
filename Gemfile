@@ -8,7 +8,7 @@ gem "haml", '>= 3.1.alpha.214'
 gem "haml-rails"
 gem "devise"
 gem "hpricot"
-gem "jquery-rails"
+gem "jquery-rails" , '>= 1.0.12'
 gem "ruby_parser"
 gem "formtastic", "~> 1.2.3"
 gem "validation_reflection", "~> 1.0.0"
