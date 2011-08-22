@@ -6,8 +6,6 @@ lat:
 lng:
 = @poi.lng
 %br
--unless user_signed_in? && current_user.pois.include?(@poi)
-	- form_for :poi, :url=>poi_collected_path(@poi), :method => :post do |f|
-		= f.submit "collected"
+= render_interaction(@poi, current_user)
 %br
 = image_tag "http://maps.google.com/maps/api/staticmap?zoom=14&size=476x476&maptype=streetmap&markers=color:red|#{@poi.lat},#{@poi.lng}&sensor=false"

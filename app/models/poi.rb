@@ -5,11 +5,12 @@ class Poi < ActiveRecord::Base
   after_validation :reverse_geocode
   
   
-  has_many :users, :through => :collected_poi
-  has_many :collected_poi   
+  has_many :users, :through => :collectible
+  has_many :collectible
+  belongs_to :interaction   
   
   def collected(poi, user)
-      CollectedPoi.create!(:poi_id=>poi.id, :user_id=>user.id, :points=> rand(10))
+      Collectible.create!(:poi_id=>poi.id, :user_id=>user.id, :points=> rand(10))
   end
   def poi_points(p_point)
     pp= points.to_i + p_point.points

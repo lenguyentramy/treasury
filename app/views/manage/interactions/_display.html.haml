@@ -1,0 +1,9 @@
+%h1 Hallo
+%p= @poi.interaction.title
+%p= @poi.interaction.text
+
+-if user_signed_in? && @poi.interaction.points.nil?
+	- form_for :poi, :url=>poi_collectible_path(@poi), :method => :post do |f|
+		= f.submit "einsammeln"
+-else
+	= render_interaction_result(@poi, current_user)

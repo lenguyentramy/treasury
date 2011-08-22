@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :sign_out_banner
+  helper :all
     
   def after_sign_in_path_for(user)
     if user.is_a?(User) && user.banned?

@@ -1,0 +1,6 @@
+%h1 Interaction Index
+
+= table_for(@interactions) do |t|
+ -t.data :title, :text, :points,:actions => [:show, :edit, :destroy], :action_prefix=>"manage"
+
+= link_to "New Interaction", new_manage_interaction_path

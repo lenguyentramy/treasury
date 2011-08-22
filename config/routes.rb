@@ -1,8 +1,10 @@
 Treasury::Application.routes.draw do
 
+
   devise_for :users
   resources :pois, :only => [:show, :index] do
     post 'collected'
+    resource :collectible, :only => [:create]
   end
     
   namespace :manage do
@@ -10,6 +12,7 @@ Treasury::Application.routes.draw do
       get :banned
     end
     resources :pois
+    resources :interactions
   end
   
   root :to=> "pages#home"

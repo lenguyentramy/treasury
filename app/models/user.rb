@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :blocked
-  has_many :collected_poi
-  has_many :pois, :through => :collected_poi
+  has_many :collectible
+  has_many :pois, :through => :collectible
 
   def banned?
     blocked ||= false
@@ -18,6 +18,6 @@ class User < ActiveRecord::Base
   end
   
   def sum(user)
-  CollectedPoi.where(:user_id => user.id).sum(:points)
+  Collectible.where(:user_id => user.id).sum(:points)
   end
 end
