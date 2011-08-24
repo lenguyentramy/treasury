@@ -11,12 +11,15 @@ class User < ActiveRecord::Base
   has_many :pois, :through => :collectible
 
   def banned?
-    blocked ||= false
+    blocked
   end
-  def block
-    self.blocked = true unless banned?
+  def block_unblock
+    if banned?
+      update_attributes(:blocked => false)
+    else
+      update_attributes(:blocked => true)
+    end
   end
-  
   def sum(user)
   Collectible.where(:user_id => user.id).sum(:points)
   end

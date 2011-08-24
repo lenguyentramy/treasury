@@ -2,7 +2,7 @@
 %p= @poi.interaction.title
 %p= @poi.interaction.text
 
--if user_signed_in? && @poi.interaction.points.nil?
+-if user_signed_in? && !current_user.pois.include?(@poi)
 	- form_for :poi, :url=>poi_collectible_path(@poi), :method => :post do |f|
 		= f.submit "einsammeln"
 -else

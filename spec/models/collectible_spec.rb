@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Collectible do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+     it { should belong_to(:poi) }
+     it { should belong_to(:user)}
+  end
 end

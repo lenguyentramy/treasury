@@ -7,8 +7,13 @@ Feature: Admin
 		Given there is a user (banner)
 		Given I am logged in as "admin@example.com"
 
-	Scenario: Manage Users
+	Scenario: Manage Users Index
 	When I go to the manage users page
-	And I should see the edit manage users link
-	And I should see the edit manage users link
-	And I should see the edit manage users link
+	And I should see the edit manage user "User" link
+	And I should see the banned manage user "User" link
+	
+	Scenario: Block User & Unblock User
+	When I go to the manage users page
+	And I should see the banned manage user "User" link
+	# And I block user "User"
+	# And I should see "Blocked"

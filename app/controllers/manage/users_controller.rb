@@ -5,7 +5,7 @@ class Manage::UsersController < Manage::BaseController
   end
   def banned    
     @user = User.find_by_id(params[:user_id])
-    @user.block unless @user.admin
+    @user.block_unblock unless @user.admin
     redirect_to :back
   end
   def update

@@ -1,10 +1,6 @@
 # Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :interaction do
-      title "MyString"
-      text "MyString"
-      points 1
-      solve 1
-    end
+require "faker"
+Factory.define :interaction do |f|
+  f.title "MyString"
+  f.text "MyString"
 end

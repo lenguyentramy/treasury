@@ -3,7 +3,6 @@ Treasury::Application.routes.draw do
 
   devise_for :users
   resources :pois, :only => [:show, :index] do
-    post 'collected'
     resource :collectible, :only => [:create]
   end
     

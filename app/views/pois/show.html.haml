@@ -6,6 +6,8 @@ lat:
 lng:
 = @poi.lng
 %br
-= render_interaction(@poi, current_user)
+#notice
+- if @poi.interaction_id?
+	= render_interaction(@poi, current_user)
 %br
 = image_tag "http://maps.google.com/maps/api/staticmap?zoom=14&size=476x476&maptype=streetmap&markers=color:red|#{@poi.lat},#{@poi.lng}&sensor=false"
