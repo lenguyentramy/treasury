@@ -33,6 +33,7 @@ gem 'acts_as_indexed'
 gem 'RedCloth'
 gem 'mobile-fu'
 gem 'has_scope'
+gem 'citier'
 group :development do
   gem "ruby-debug19"
   gem 'rails-footnotes', '>= 3.7'

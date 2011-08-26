@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819145158) do
+ActiveRecord::Schema.define(:version => 20110824152857) do
 
   create_table "collectibles", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20110819145158) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+  end
+
+  create_table "multiple_choices", :force => true do |t|
+    t.string  "question"
+    t.string  "anwers"
+    t.integer "result"
   end
 
   create_table "pois", :force => true do |t|
@@ -58,5 +65,17 @@ ActiveRecord::Schema.define(:version => 20110819145158) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "view_multiple_choices", :id => false, :force => true do |t|
+    t.integer  "id",         :default => 0, :null => false
+    t.string   "title"
+    t.string   "text"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "question"
+    t.string   "anwers"
+    t.integer  "result"
+  end
 
 end

@@ -8,21 +8,22 @@
 require 'factory_girl'
 require 'database_cleaner'
 
-admin= User.create!(:username =>"Admin", :email => 'admin@exp.com', :password=>"123456",:blocked => false)
-admin.toggle!(:admin)
+# admin= User.create!(:username =>"Admin", :email => 'admin@exp.com', :password=>"123456",:blocked => false)
+# admin.toggle!(:admin)
+# 
+# 99.times do |n|
+# 
+# user= User.create!(:username =>"User#{n+1}",
+#             :email => "user#{n+1}@exp.com",
+#             :password=>"123456")  
+# end
+# @inter= Interaction.create!(:title =>"Titlestring", :text=> "Textstring")
+# 
+# 20.times do |n|
+#   lat = 50 + (rand * 3)
+#   lng = 10 + (rand * 3)
+#   poi= Poi.create!(:lat=> lat, :lng =>lng)
+#   @inter.pois << poi
+# end
 
-99.times do |n|
-
-user= User.create!(:username =>"User#{n+1}",
-            :email => "user#{n+1}@exp.com",
-            :password=>"123456")  
-end
-@inter= Interaction.create!(:title =>"Titlestring", :text=> "Textstring")
-
-20.times do |n|
-  lat = 50 + (rand * 3)
-  lng = 10 + (rand * 3)
-  poi= Poi.create!(:lat=> lat, :lng =>lng)
-  @inter.pois << poi
-end
-
+@multi = MultipleChoice.create!(:title => "M Choice", :text => "M Choice Text", :question=>"Question?", :anwers=>['Yes','No','Maybe'], :result=>1)
